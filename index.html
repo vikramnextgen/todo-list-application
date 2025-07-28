@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Todo List</h1>
+        </header>
+        
+        <div class="todo-container">
+            <form id="todo-form">
+                <input type="text" id="todo-input" placeholder="Add a new task..." autocomplete="off">
+                <button type="submit" id="add-button">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </form>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="active">Active</button>
+                <button class="filter-btn" data-filter="completed">Completed</button>
+            </div>
+            
+            <ul id="todo-list">
+                <!-- Todo items will be added here dynamically -->
+            </ul>
+            
+            <div class="todo-footer">
+                <span id="items-left">0 items left</span>
+                <button id="clear-completed">Clear Completed</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Todo item template -->
+    <template id="todo-item-template">
+        <li class="todo-item">
+            <div class="todo-content">
+                <input type="checkbox" class="todo-checkbox">
+                <span class="todo-text"></span>
+            </div>
+            <button class="delete-btn">
+                <i class="fas fa-times"></i>
+            </button>
+        </li>
+    </template>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
